@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     var body: some View {
         VStack {
             ProgressView(value: 5, total: 15)
+            //Ein Fortschrittsbalken
             HStack {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
@@ -22,13 +22,13 @@ struct ContentView: View {
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
                         .font(.caption)
-                    Label("600", systemImage: "hourglass.bottomhalf.fill")
+                    Label("600", systemImage: "hourglass.bottomhalf.fill") //Ein SR-Symbol
                 }
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Time remaining")
             .accessibilityValue("10 minutes")
-            Circle()
+            Circle() //.pading() nicht vergessen!
                 .strokeBorder(lineWidth: 24)
             HStack {
                 Text("Speaker 1 of 3")

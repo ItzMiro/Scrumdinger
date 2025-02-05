@@ -15,6 +15,8 @@ struct DailyScrum {
     var theme: Theme
 }
 
+// Wie ein DailyScrum aussieht für jedes Team
+
 
 extension DailyScrum {
     static let sampleData: [DailyScrum] =
@@ -31,5 +33,7 @@ extension DailyScrum {
                    attendees: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"],
                    lengthInMinutes: 5,
                    theme: .poppy)
+        
+//Die Verschiedenen Teams
     ]
 }

@@ -22,12 +22,13 @@ struct CardView: View {
                 Label("\(scrum.lengthInMinutes)", systemImage: "clock")
                     .padding(.trailing, 20)
                     .labelStyle(.trailingIcon)
-                    .accessibilityLabel("\(scrum.lengthInMinutes) minute meeting")
+                    .accessibilityLabel("\(scrum.lengthInMinutes) minute meeting") //Hier z. B. zieht es wie viel Minuten welches Team benötigt
             }
             .font(.caption)
         }
         .padding()
-      //  .foregroundColor(scrum.theme.accentColor)
+        //Das drückt das ganze ein bisschen rein (Schön für's Auge :D)
+      .foregroundColor(scrum.theme.accentColor)
     }
 }
 
