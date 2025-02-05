@@ -90,6 +90,9 @@ enum Theme: String {
         case .yellow: return Color.yellow
         }
     }
+    var name: String {
+        rawValue.capitalized
+    }
 }
 
 //Die Verschiedenen Farboptionen (Für die Verschiedenen Teams später)
