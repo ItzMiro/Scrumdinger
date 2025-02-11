@@ -6,17 +6,17 @@
 //
 
 import SwiftUI
-    
+
 struct DetailView: View {
     @Binding var scrum: DailyScrum
-
     @State private var editingScrum = DailyScrum.emptyScrum
+
     @State private var isPresentingEditView = false
     
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
-                NavigationLink(destination: MeetingView()) {
+                NavigationLink(destination: MeetingView(scrum: $scrum)) {
                     Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
@@ -27,15 +27,14 @@ struct DetailView: View {
                     Text("\(scrum.lengthInMinutes) minutes")
                 }
                 .accessibilityElement(children: .combine)
-                //VoiceOver then reads the two elements as one statement, for example, “Length, 10 minutes.” Without the modifier, VoiceOver users have to swipe again between each element.
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
+                    Spacer()
+                    Text(scrum.theme.name)
                         .padding(4)
                         .foregroundColor(scrum.theme.accentColor)
                         .background(scrum.theme.mainColor)
                         .cornerRadius(4)
-                    Spacer()
-                    Text(scrum.theme.name)
                 }
                 .accessibilityElement(children: .combine)
             }
@@ -73,7 +72,6 @@ struct DetailView: View {
         }
     }
 }
-
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
